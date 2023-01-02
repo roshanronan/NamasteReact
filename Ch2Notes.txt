@@ -1,0 +1,38 @@
+1. Caret(^) and tilde(~) in package.json before a library version
+   package name :(~/^) package version
+   Here package version is written as 3.4.5 like Major.minor.patches
+   ^ means it will automatically update for minor updates for the package
+   ~ means it will automatically update for patches and bug fix.
+
+2. Package-lock.json vs Package.json
+   Package.json cantains the package version detail for development environment of our project 
+   and Package-lock.json cantains package version(exact version) detail for production environment.
+   It locks the package version and should naver to put in gitignore file.
+
+3. Npx means execute using npm. 
+   When we use npx it not install the library to your local system.
+   Npx downloads the package for runtime and then delete it.
+
+4.Bundlers
+   React use bundler(webpack) for code compression and convert our react code to single html,css and js,that our
+   browser understand.
+
+   Bundlers like viti,webpack and parcel.
+   Bundlers provide many features to react app that help to make production ready app.
+   Some features of Parcel bundler are--
+      1.HMR-hot module replacement.
+      2.File watcher alogrithm which are written in c++
+      3.Code minify
+      4.Code compression
+      5.Create server for local environment
+      6.Tree shaking - remove un wanted code . like we install a package and it can have many funtions but we use
+        2 or 3 funtions so bundler help in cleaning by tree shaking.
+      7.Image optimization
+      8.Super fast build alogrithm 
+      9.Caching while development
+      10. Compatible with older version of browser(by creating polyfills)
+      11.https on dev
+      12.manages port number
+      13. Zero config
+
+
