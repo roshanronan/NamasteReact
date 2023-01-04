@@ -1,3 +1,41 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+
 .container{
-    background-color: rgb(213, 241, 87);
+    background-color: rgb(10, 2, 12);
+}
+
+.headerContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgb(37, 32, 41);
+    height: 50px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.logo{
+    height: 40px;
+    width: 40px;
+}
+
+.serchbar{
+    border: none;
+    height: 40px;
+    width: 400px;
+    border-radius: 2px;
+}
+
+.user{
+    height: 40px;
+    width: 40px;
 }

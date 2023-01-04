@@ -1,0 +1,46 @@
+1 - What is JSX?
+	JSX is html like syntex that is used to create react elements and react components.It look like html tags but JSX is totally
+	different from html. You can write javascript code in it in curly braket{} it accept any valid javascript expression.
+	
+2 - Superpower of JSX
+	1. As it look like html tags so it is easy to understand although jsx have some extra attribute that understand by react only.
+	2. Component Composition : we can use one component in another component.
+	3. Re-usebility: Jsx used to create components that are highly reusable. we can create some component and can use in another component
+		using Component Composition.
+	4.It help reactdom to create dom manupulation and updation fast, as jsx compoent have keys attribute using that reactdom decide which component to
+	  mount and unmout.
+	5.XSS Safe: cross site script is not possible as reactdom escapes and sanetize the code that passed to react component.
+	
+3 - Roll of type attribute in script tag? what options can i use there?
+	Type attribute in script is used to specify the mime type of the script and identify the content of the tag.
+	Script tag in html page is used to specify which type of script will be used in the page. so that browser interprate accordingly.
+	below can be use in type attribte
+		 -module - This value specfiy that code must be treated as javascript module and the processing of the script content is deffered.
+				   in module script we can use import and export, to import funtion from another file and export to another file.
+		 -importmap - the import map below defines a "module specifier map" JSON object where the property names can be used as module specifiers, and the
+            		 corresponding values will be substituted when the browser resolves the module URL. The values must be absolute or relative URLs.
+		 <script type="importmap">
+        {
+          "imports": {
+          "shapes": "./shapes/square.js",
+          "shapes/square": "./modules/shapes/square.js",
+          "https://example.com/shapes/": "/shapes/square/",
+          "https://example.com/shapes/square.js": "./shapes/square.js",
+          "../shapes/square": "./shapes/square.js",
+                 }
+        }
+       </script>
+	   It specify that the script in a import map means it contains a json object having key value pair. where key are used as module name to import methods 
+	   from value which specfiy a file.
+	   
+4 -  {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent> </TitleComponent>}
+     Ans:
+	 {TitleComponent} signifies  TitleComponent will treat as javascript variable inside a jsx. and if 
+      TitleComponent is a compoent it will give an error saying Funtion is not a valid react child.
+      or you can call it as {TitleComponent()} this will work as normal jsx.
+
+	 {<TitleComponet/>} signifies TitleComponent is a funtion that return a JSX that will render on dom.
+     
+     {<TitleComponent> </TitleComponent>} signifies TitleComponent is a funtion that return a JSX that will render on dom.
+	 
+		

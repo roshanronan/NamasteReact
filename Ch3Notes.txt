@@ -1,0 +1,54 @@
+**
+parcel does not remove console.log, by default we need extra plugins and needed to be configure in project.
+and we use babel plugin to remove console.log
+Plugins : babel-plugin-transform-remove-console
+
+
+#JSX is not HTML in javascrpt.
+example
+    const heaading = <h1 key=1>Namaste React </h1>
+    here h1 may look like html but it is not. but it is a html like syntex.
+
+? tabindex ?
+? how to create multiple tag in jsx?
+? how to create image tag in jsx?
+
+// React.createElement() =>object=>html > render to dom
+when we create element using createElement method of react.
+
+//JSX => React.createElement() =>object=> html > render to dom
+when we use JSX to create element . Babel understand JSX and it convert JSX systex 
+as input for React.createElement() method. behind the scene babel use React.createElement().
+
+//Advantage of JSX
+-readbility
+-developer experience/friendly
+-re-usebility
+-syntex sugar
+
+Component in React
+* always start from a capital letter. not necessary but good practice.
+
+What is react element and react Component??
+React element is a javascrpt variable
+    like const heading = (
+        <h1>heading</h1>
+    )
+    here heading is an  javascript object variable. 
+
+React Component  is a javascrpt funtion
+    like const heading2 = () => {
+        return(
+            <h2>heading2</h2>
+        )
+    }
+    here heading2 is a javascrpt funtion.
+
+
+?what is jsx syntex sanetization?
+jsx prevent xss attack. cross site scripting are prevent by JSX .JSX use syntex sanetization.
+
+
+//component composition.
+React Component inside another react component is known as component composition.
+
