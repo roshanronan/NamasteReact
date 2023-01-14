@@ -1,0 +1,81 @@
+1 - Is JSX is mandatory for React?
+    NO, It is not mandatory that we required JSX to write react component. as JSX use react.createElement behind the scene.
+    So we can wirte react component without using JSX,but JSX makes code more readable,reusable and easy to maintain.
+
+2 - Is ES6 is mandatory for React?
+    No, it is not mandatory. ES6 have new way to define and declare funtion and variable but in the and all code is coverted to 
+    standard js code by a transpiler(like babel).So it is not mandatory we can write code in old school manner as well.
+
+3 - {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent> </TitleComponent>} in JSX
+    When we access {TitleComponent} in JSX it will treat TitleComponent as Js variable but here it is a component so it will give 
+    an error. or we can use it like {TitleComponent()} in JSX it will work fine.
+
+    {<TitleComponent/>} with will work fine in JSX as it is self closing JSX component.
+
+    {<TitleComponent> </TitleComponent>} also this usage is also perfectly fine.It can be use to render children between opening and closing
+    component if we pass children in props.
+
+4 - How can I write comment in JSX?
+    As to write javascript in JSX we need to use {}.and between {} we can comment by place two forward slace before the line
+    that we want to comment.
+
+5 - What is <React.Fragment></React.Fragment> and <> </>?
+    Both are same descrition of the empty tag that is used for creating a parent tag in JSX.
+    As we know JSX can return a single element,so sometime we wrap our code in an additonal div. here we can use React.Fragment component
+    without adding an extra div to our code.
+
+6 - What is Virtual DOM?
+    Virtual Dom is copy of real dom in memory that react use for update real dom when there is change in state of any component.
+    Virtual Dom make updating element fast as React use diffing algorithm  to find out change between Current Virtual Dom to previous 
+    Virtual dom and then make changes in real dom.
+
+7 - What is reconciliation in React?
+    Reconciliation is a process by which react compare virtual dom and place the updated or changed element
+        to the real dom.
+    when first time a react component loads it create a virtual copy of the real dom and when there is an update
+        in any component it create a new virtual dom and compare it with the previous copy of dom and then make 
+        the required changes in Real Dom.
+    For comparision react use Diffing algorithm.This alogo help react to campare vitual dom.
+
+8 - What is React Fiber?
+    React fiber is new conciler of react that use diff algorithm and it is introduce in react 16.
+    The goal of React Fiber is to increase its suitability for areas like animation, layout, and gestures. 
+    Its headline feature is incremental rendering: the ability to split rendering work into chunks and spread it out over multiple frames.
+    
+    Other key features include the ability to pause, abort, or reuse work as new updates come in; the ability to assign priority to
+    different types of updates; and new concurrency primitives. 
+
+9 - Why we need keys in react? When do we need keys in React?
+    React use key attribute to differnciate siblings of same type in a component.
+    when a component have more then one siblings of same type ( tags/JSX component) and differnciate amoung those
+    element react required a unique attribute . so key attribute provide that uniquness.
+
+10- Can we use index as keys in React?
+    We can use index as key in react component,
+    But it is NOT RECOMMENDED to use it. as cause performence issue.
+    as react use keys uniqueness to campare vitual doms. as index will unique but in a order like 0,1,2,3,4 and have 5 element
+    but if react element at 2 remove but now index will be like 0,1,2,3 so it can cause inconsistent result.
+   
+
+11- What is props in react?? ways to use it?
+    Props is sort for property. It is kind of passing attribute to react component.
+    Whatever attribute we pass to react component react wrap this attributes in a object and passed this object to its implementation.
+    where this attribute can be access using .(dot) operator . Like props.attribute .
+
+    <Abc name="xyz" item ="abc">
+    in Abc compoent we can access as props.name.
+
+    or
+     randomObj ={
+        name='xyx',
+        item='bab'
+    }
+    you can also pass props like this. 
+    <Abc {...randomObj}>
+    but now in Abc compoent we use direct attribute keys.
+
+
+12- What is Config Driven UI?
+    Config Drive UI is a frontend development method where ui is depends on a config and it changes according to the config.
+    
+    

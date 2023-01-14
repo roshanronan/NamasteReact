@@ -1,0 +1,36 @@
+
+
+#Jsx can have one parent.
+
+React.Fragment is like empty tag.
+as we don't want extra div in our jsx we can use React.Fragment or <></>.
+and <> JSX code </> and <React.Fragment> Jsx code </React.Fragment> 
+and <> </> is short hand of react.Fragment.So both are same.
+
+HW. can we use react.fragment inside react.fragment??
+Yes we can have but there is no any affect. it will be same as using single react.fragment.
+
+Config Driven UI.?
+Config Driven Ui is ui where our ui changes according to data , that we fetch from backend.
+
+
+
+Optional Chaining??
+Optional chaining is used when we access key in a object and that key might be there or not. So in this case while 
+accessing that key we use question mark(?) before it.
+
+
+Reconciliation??
+Reconciliation is process of updating Real Dom when there is change in state of any component in react.
+before update real dom, react compare Current Virtual dom to previous Virtual dom using diffing algo and then 
+make required updates in real dom.
+
+React fiber??
+
+Reconciliation engine?
+
+Why index in map funtion should not use for key?
+We can use index in map funtion but it is not recommended because there is not gaurantee to be unique. 
+and not being unique can cause performance issue for react.
+
+Difference b/w forEach and Map?

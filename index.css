@@ -8,34 +8,47 @@ body{
 }
 
 
-.container{
-    background-color: rgb(10, 2, 12);
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    border: 1px solid black;
 }
 
-.headerContainer{
+.nav-items > ul{
+    list-style-type: none;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: rgb(37, 32, 41);
-    height: 50px;
-    align-items: center;
-    margin-top: 10px;
+}
+
+.nav-items>ul>li{
+    padding: 5px;
 }
 
 .logo{
-    height: 40px;
-    width: 40px;
+        height: 80px;
+        width: 80px;
 }
 
-.serchbar{
-    border: none;
-    height: 40px;
-    width: 400px;
-    border-radius: 2px;
+.card{
+    width: 200px;
+    margin: 10px;
+    border: 1px solid black;
+    padding: 5px;
 }
 
-.user{
-    height: 40px;
-    width: 40px;
+.card>img{
+    width: 100%; 
+}
+
+.card>h5{
+    word-wrap: break-word
+}
+
+.restaurant-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.searchBar{
+    margin: 10px;
 }
