@@ -1,0 +1,37 @@
+// React follows ONE WAY data binding.
+suppose a component have a input field and there is a variable have value
+
+let inputValue = 'roshan'
+
+<input name='abc' value= {inputValue}>
+
+now in ui there will be roshan in input field all the time it won't change.
+so to make change we need to use onChange funtion to change value.
+
+<input name='abc' value = {inputValue} 
+onChange={(e)=>{
+    inputValue = e.target.value
+}}>
+
+now if you see input on your ui there is value "roshan" but if you try to enter 
+any other value it wont change.
+    because due to one-way binding when you change the value input field it won't change in inputValue 
+    variable. so every time component rerender onChange funtion call it render with initial value.
+
+//what is state?? why is state??
+
+In react normal variable like above example , react can't track there value change so create use 
+variables that called state and state change makes react to re-render the component.
+So State is special kind of react variable that are use to store value in react component.
+and react always watches state variable/.
+
+
+//what is hooks ?? why is hooks??
+Hooks in React is funtion and every hooks have some special power to create special variable in 
+funtional component. 
+
+What is useState()?
+useState is one of the hooks that provided by react and it is used for create state variables in
+react funtional component. It returns a array with two element in it. 
+
+const [variableName,setVariableName]= useState("default_value")

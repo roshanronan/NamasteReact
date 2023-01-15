@@ -1,0 +1,43 @@
+1 - Diffenect b/w Named exprot , default exprot and * as 
+
+    export default Button              -> import Button from './button' //here we can import as any name you want it will give you same funtion.
+                                          const Button = require('./button').default
+    
+    export const Button                -> import { Button } from './button'//named import must be with name speficied in export file.
+                                          const { Button } = require('./button')
+
+    **
+    if a file have default export as well as named export
+    we can import as
+    import DefaultExport ,{NamedImport} form 'exported file'
+
+    *** 
+    when we have multiple named export from file so here we can import
+    as named import or we can import all from that file using * as
+    import * as ANY_NAME form '..exproted file path'
+    now you can access method or funtion 
+          ANY_NAME.funtion
+
+             
+    export { Button }                  -> import { Button } from './button'
+                                          const { Button } = require('./button')
+             
+    module.exports.Button              -> import { Button } from './button'
+                                          const { Button } = require('./button')
+    
+    module.exports.Button = Button     -> import { Button } from './button'
+                                          const { Button } = require('./button')
+    
+    module.exports = Button            -> import * as Button from './button'
+                                          const Button = require('./button')
+
+2 - What is the importance of config.js?
+    Config/Constant files are used to keep out constant that we gonna use in our app. Or config details.
+
+3 - What are React Hooks?
+    React Hooks are special method that are helpful for creating local variable for react component.
+    and all react hooks have different purpose.
+
+4 - Why do we need a useState Hook?
+    We use useState to store a value of a form Input or any react component local variable .
+    it helps react to decide when to render.
