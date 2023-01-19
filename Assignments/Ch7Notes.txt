@@ -1,0 +1,9 @@
+1.Never write one funtional compnonet inside another compnonet, cause that componet will be created on every render
+and it will make our app performance bad.
+
+2.Never write a useState in if block and for loop, cause it will create uninconsistent.
+
+3. React provide useState hook to create local variable in compnonet.
+   so never use useState outside of funtional component.
+
+4.we can use useEffect as many as we need according to our use case.

@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 
 const Title =()=>{
     return(
@@ -8,8 +8,12 @@ const Title =()=>{
        )
 }
 
-const Header = () =>(
-    <div className="header">
+const Header = () =>{
+
+    const [isLogin,setIsLogin] = useState(false)
+
+    return(
+        <div className="header">
         <Title/>
         <div className="nav-items">
             <ul>
@@ -18,8 +22,15 @@ const Header = () =>(
                 <li>Contact</li>
                 <li>Cart</li>
             </ul>
+            
         </div>
+        {
+            isLogin
+            ?<button onClick={()=>{setIsLogin(false)}}>Logout</button>
+            :<button onClick={()=>{setIsLogin(true)}}>Login</button>
+        }
     </div>
-)
+    )
+ }
 
 export default Header;

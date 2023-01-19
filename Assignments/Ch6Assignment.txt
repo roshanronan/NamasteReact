@@ -1,0 +1,103 @@
+1 - What are microservices?
+    Microservice is a style of architechture to develope and deploy web application. Its define an architechture that 
+    structures the application as a set of loosely coupled, collaborating services.
+        it consist of many independent modules and all modules can saperately develope,deploy and test.
+    it make development and maintanence easy for modules.
+    Here earch module can be build in new technology stack and all the module can be build using different team
+    and different stack as these modules are loosly coupled.
+    Scaling is not issue with such type architechture. The microservice architecture is an application of Y-axis scaling
+
+2 - What is monolith?
+    Monolith is software development architechture in which all module of application like User Interface , backend, trasction 
+    message , database all modules are packed together.
+        All modules are depends on each other so a single change in any module results in deploying whole
+    application again. 
+    It is difficult to adept new technology stack.
+    for new developer team it take decent amount of time as these applications become very large with time.
+    here for scaling we need to X and Z axis scaling in X asix scaling we create copies of same application under
+    a loadbalancer and in Z axis we create copies of application but hare we saperate database hence each copy has
+    smaller data.
+
+3 - What is the difference between monolith and microservice?
+    Monolith: 
+        1. Whole application frontEnd, backend , communication b/w module and database all consit in
+           a single project.
+        2. Longer dependancy on a stack/ technology.
+        3. Require big development team .
+        4. Scaling application is difficult task.
+        5. Change in one module result , redeploy every modules.
+    
+    Microservice:
+        1.Project divided in to servel smaller modules.that can be build saperatly.
+        2.All modules can be build using different stack or technology.
+        3.No big team required.
+        4.Scaling is easy but we need to create safer trasction and communication b/w modules.
+        5.Here module are loosly coupled so every part can be deploy and tested without affecting other.
+
+4 - Why we need a useEffect hook?
+    It is a hook provide by react to handle side effect in functional component.
+    useEffect take two arguments first is on callback function and second is an dependancy array.
+    by default useEffect runs after every render but it can be customise by using dependancy array.
+      A side effect is said be happen when call function change state of the component.
+    It is needed when we want to do after initial render. like api call , data fetching or dom manupulation.
+
+5 - What is Optional changing?
+    Optional Changing is used while accessing a key,value pair in a object to look that the we trying to access
+    is present in object or not. Without using optional chaining accessing such key that not present results to
+    error.
+    Example 
+    let xx = {"key":"value","name":"roisab","age":26}
+            xx?.age will return 26
+            xx.dd will return undefind
+            xx.dd.dd return error
+
+            but xx?.dd?.dd will return undefind here we wont get error.
+
+6 - What is Shimmer UI?
+    Shimmer Ui is the skeleton ui that is shown to user before the actual content of the page loads.
+    It shows that the content is loading.
+
+7 - What is difference b/w javascript expression and javascript statement? 
+    Javascript Expression is any unit of code that evaluated to a value.Since expression produce value
+    so they can be anywhere javascript expect a value in function invocation.
+
+    Javascript Statement is the a piece of instruction to perform some action.
+    based on some logic or loop to do some work.Such actions include creating a variable or a function, 
+    looping through an array of elements, evaluating code based on a specific condition etc.
+    JavaScript programs are actually a sequence of statements.
+
+8 - What is conditional render ? Explain with an example.
+    Conditional Rendering is render a component on based of a condition. Here we render a different component
+    when the meet different condition.
+        like suppose we are fetching data using useEffect in our React component and we useEffect render 
+    after initial render, so here we want render different component untill we dont have the data from fetching.
+
+    fetchedData.length?<Shimmer>:<Real Component>    
+
+9 - What is CORS?
+    Cors stands for Cross origin resource sharing. 
+    It is a browser feature that blocks request for resource from one origin to another origin. 
+    It create standard by following origin can share resouces amoung them.
+
+    like when a origin request for resouces from another origin browser make a pre flight request before actual
+    request to server, now if server return a response header with Access Control origin access allowed as it also 
+    known as options response. now browser make an actual request for resource.
+
+10- What is async and await?
+    In modern JavaScript we use asynchronous code . The code that not blocks the execution of code.
+    we use promises to make an asynchronous call as we promises take time to fullfil or reject.
+        Async and Await are use to create promise with much more readablity. Any async function return
+    a promis to make wait or to wait untill promis retrun something. we use await keyword to wait promise untill
+    it resolve or reject.
+
+11- What is the use of  'const json = await data.json();' in getRestaurants() function?
+    Here we get data when fetch api resolve and return response object. and this response object
+    has many helpful methods like 
+        response.json(),response.text(),response.formData(),response.blob() and response.arrayBuffer()
+    these all methods retrun promise. Therefore we use await keyword before data.json() so it waits untill
+    it resolve.
+
+
+
+
+

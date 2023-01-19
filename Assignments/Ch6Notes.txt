@@ -1,0 +1,8 @@
+//
+Early return
+
+like we render on basis of restaurant list in our body compnonet
+what if the restaurantList is not avilable at that so here we can make a check for the value and 
+return some jsx or null
+
+if(!restaurantList) return null;
