@@ -1,0 +1,41 @@
+1 - What are various ways to add images into our app? Explain with example?
+	We can import images in React component as below:-
+		1. import <any_name> from 'path_to_img'
+				use - <img src={any_name}/>
+		2. import * as <any_name> from 'path_to_img'
+				use - <img src={any_name.name-of-image}/>
+		3. Or we can use directly in img Jsx as below
+				use - <img src = {require('path_to_img')} />
+		4. Import {<any_name> as ReactComponent} from 'path_to_img'
+				use - use - <img src={any_name}/>
+				
+	
+2 - What would happen if we do console.log(useState())?
+	Here on console we will get an array of length 2 .
+		first one is the default value passed to useState and second is a function().
+	
+3 - How will useEffect behave if don't add a dependency array?
+	If we don't pass a dependency array in useEffect hook, then according to it's default behaviour it will call the effect (callback funtion 
+	passed to useEffect) on every render of the component in which we are using useEffect. And an empty array passed to useEffect will reset 
+	its default behaviour and it will call effect only once after the initial render of component. 
+	
+4 - What is SPA?
+	SPA stands for single page application. SPA is a implemention of web application that loads a single web
+	document, and then updates the body content of that single document using javascript apis such as fetch and
+	XMLHttpRequest.
+		This therefore allow users to use website without loading whole new page on very interaction or routes.
+	
+5 - What is the differnce between Client side routing and Server side routing?
+	In Server side routing , when a user click on a link then browser makes an http request for that page
+	on server now server process the request and send a response usually a html page, now bowser discard the 
+	old page and loads the new page.
+
+	In client side routing , when use click on a link , now client side code catches the event look for the
+	the like if the url is not an external then it prevents the browser to make  request.
+	then routing library changes the url in brwoser with help of html histroy api and routing libary changes
+	the states and loads component on client side. sometimes if it require client app request data from server
+	only data not pages, and loads new component on client side.
+
+   Resource for Ans 5
+   https://scythe-studio.com/en/blog/web-development/client-side-vs-server-side-rendering,
+   https://stackoverflow.com/questions/23975199/when-to-use-client-side-routing-or-server-side-routing

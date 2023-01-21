@@ -7,3 +7,26 @@ and it will make our app performance bad.
    so never use useState outside of funtional component.
 
 4.we can use useEffect as many as we need according to our use case.
+
+
+//
+To use routing we need to create router configuration
+
+we use createBrowserRouter from react-router-dom
+router config created using createBrowserRouter 
+
+
+// while creating nested routes in router config
+ we need use Outlet component which is provided by react router dom
+ and all children routes goes in Outlet and Outlet component used where we want our child routes.
+
+// dynamic routing means means with id params 
+we need to use hook call useParams from react router dom
+
+
+//SPA - Single Page Application
+there are 2 types of routing 
+ 1. client side routing - in react we do client side routing as when we move about to contact page that happen on
+ client side.
+ 2. server side routing - here when we move about to contact or any page that page data come from server, earlier 
+ website uses this routing.

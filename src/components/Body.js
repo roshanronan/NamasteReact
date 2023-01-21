@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import {RestaurantCard} from './RestaurantCard'; //named import 
 import Shimmer from "./Shimmer";
+import { RESTAURANT_LIST } from "../constant";
 
 
 const filterData=(restaurantList,serachText)=>{
@@ -14,16 +15,22 @@ const Body = () =>{
     const [filtedRestaurantList,setFiltedRestaurantList] = useState([])
 
     useEffect(()=>{
-        // getData()
+        getData()
         console.log('useeffedr')
         // https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6157801&lng=77.40994970000001&page_type=DESKTOP_WEB_LISTING
     },[])
 
     async function getData(){
-        let data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6157801&lng=77.40994970000001&page_type=DESKTOP_WEB_LISTING")
+        try{
+            let data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6157801&lng=77.40994970000001&page_type=DESKTOP_WEB_LISTING")
         let json = await data.json()
         setRestaurantList(json?.data?.cards[2]?.data?.data?.cards)
         setFiltedRestaurantList(json?.data?.cards[2]?.data?.data?.cards)
+        }catch(e){
+            setRestaurantList(RESTAURANT_LIST)
+            setFiltedRestaurantList(RESTAURANT_LIST)
+            console.log("ddd",e)
+        }
     }
 console.log('render')
 //early return or avoid rendering  

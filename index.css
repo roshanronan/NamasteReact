@@ -15,6 +15,10 @@ body{
     border: 1px solid black;
 }
 
+.container{
+    height: 100%;
+}
+
 .nav-items > ul{
     list-style-type: none;
     display: flex;
@@ -75,4 +79,40 @@ background-color: rgb(179, 178, 178);
 .shimmer-main-container{
     display: flex;
     flex-wrap: wrap;
+}
+
+.restaurant-menu{
+    display: flex;
+}
+
+.login-contaner{
+    height: 80%;
+    display: flex;
+    background-color: aquamarine;
+    justify-content: center;
+    align-items: center;
+    margin:20px 20px;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.form-container>form{
+ display: flex;
+ flex-direction: column;
+ width: 20%;
+ height: 60%;
+}
+
+.form-container>form>input,label{
+    margin: 4px;
+    width: 100%;
+
 }
