@@ -32,7 +32,7 @@ const Body = () =>{
             console.log("ddd",e)
         }
     }
-console.log('render')
+
 //early return or avoid rendering  
     if(!restaurantList) return null;
 //

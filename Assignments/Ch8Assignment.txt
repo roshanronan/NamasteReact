@@ -1,0 +1,148 @@
+1 - How do you create nested routes in react-router-dom?
+    To create nested routes in react-router-dom we need to create 
+        children route of the routes in configuration.This children takes an array of object 
+        container new nested routes path and element.
+
+    const appRouter =  createBrowserRouter([
+        {
+            path:'/',
+            element:<Home/>,
+            errorElement:<Error/>,
+            children:[
+                {
+            //here we can skip leading '/' as here it will be treated as : localhost:1234/about
+            path:'/about'
+            element:<About/>
+            children:[
+                {
+                    //this is nested route here leading '/' is mendatory so react router concate it with
+                    parent routes : localhost:1234/about/profile or else if we skip it will look :localhost:1234/profile
+                    which is not a valid route
+                    path:'/profile'
+                    element:<Profile/>
+                }
+            ]
+        }
+            ]
+        }
+    ])
+
+2 - Read createHashRouter and createMemoryRouter from react-router-dom docs.
+
+
+
+3 -  What is the order of Life Cycle methods in Class based components in React?
+     In react, Under 3 main event Mounting , updating and Unmouting Life cycle method is called.
+     while mounting a class based component 
+            1.(Parent) Constructour();
+            2.(Parent) Render();
+            3.(Parent) ComponentDidMount();(This method is called only once whenever this component mounts.)
+                         In ComponentDidMount, we make api calls or some side effect methods that changes 
+                         class state and props so updating of comoponent happens here
+            4.(Parent) ComponentDidUpdate(); 
+                        Here if there is update in component then Render method will be called again.
+            5.(Parent) componentWillUnmount();
+
+        If in render method we have child component then child component life cylce will execute
+           Then execution flow will be like
+              
+                1.(Parent) Constructour();
+                2.(Parent) Render(); found child component
+                         1.(Child) Constructour();
+                         2.(Child) Render();
+                         3.(Child) ComponentDidMount()
+                         if child make an update in state or props then parent did mount method will be called
+                3.(Parent) ComponentDidMount()
+                         4.(Child) ComponentDidUpdate();
+                4.(Parent) ComponentDidUpdate()
+
+            and while unmouting the components parent will Unmount first.
+                5.(Parent) componentWillUnmount()
+                         5.(Child) ComponentWillUnmount()
+
+        *** and we need to clear our function or methods called in componentDidMount,in ComponentWillUnmount 
+            method. 
+                Class Component // this.timer = setInterval(()=>{console.log("yes")},1000) ComponentDidMount
+                               //  clearInterval(this.timer) // in ComponentWillUnmount 
+                Functional Component  in useEfffect   
+                                    // useEffect(()=>{
+                                        const timer = setInterval(()=>{console.log("yes")},1000) 
+
+                                        return ()=>{
+                                            clearInterval(timer)
+                                        }
+
+                                    },[])
+    ***** NEVER COMPARE CLASS COMPONENT LIFE CYCLE METHOD TO FUNCTIONAL COMPONENT USEEFFECT OR METHODS.*****
+
+4 - Why do we use componentDidMount?
+    We use it make api call or to update props and state of the component so it can trigger 
+    ComponentDidUpdate method and we can have updated.
+
+5 - Why do we use componentWillUnmount?
+    To clean up our api call or side effects in componentDidMount cylce.
+     example
+        Class Component       
+                               // this.timer = setInterval(()=>{console.log("yes")},1000) ComponentDidMount
+                               //  clearInterval(this.timer) // in ComponentWillUnmount 
+
+        Functional Component  in useEfffect   
+                                    // useEffect(()=>{
+                                        const timer = setInterval(()=>{console.log("yes")},1000) 
+
+                                        return ()=>{
+                                            clearInterval(timer)
+                                        }
+
+                                    },[])
+
+6 - (Research) Why do we use super(props) in constructour?
+    There are Two main reason to use super(props) in constructour.
+    In javascript it is mendatory to call super in child class as super points to constructour of parent class.
+    Child class can use 'this' keyword after the super() call in its constructour before super call its value is
+    undefiend. 
+      And In react, It points to constructour for React.Component class.
+      we call super(props) it give access to props passed in parent class in child as 'this.props'. Thus calling super(props) 
+      provide access to 'this' keyword  and bind props in constructour of child class.
+        ** however if we dont call super(props) instead we just call super() in child constructour we can 
+      access this.props in render method. but it can create confusion so it best practice to make 'super(props)'
+      first statement in child constructour.
+      Resource ::https://overreacted.io/why-do-we-write-super-props/
+
+       
+
+7 - (Research) Why callback function of useEffect can't be async?
+    There are TWO main reason why we can't make callback function of useEffect async.
+        1.Async function return a promise 
+        2.useEffect aspect a clean-up-function as return, which runs at umounting time of the component.
+    making callback function as async function can cause memory leak as return function will never get
+    a chance to run.
+
+    here how we can use async/await in useEffect
+     1. self invoked function
+      // 🆗 Ship it
+          useEffect(() => {
+            (async () => {
+              const users = await fetchUsers();
+              setUsers(users);
+            })();
+          
+            return () => {
+              // this now gets called when the component unmounts
+            };
+          }, []);
+     
+     2. Named async await function
+       // 🆗 Ship it
+          useEffect(() => {
+            const getUsers = async () => {
+              const users = await fetchUsers();
+              setUsers(users);
+            };
+          
+            getUsers(); // run it, run it
+          
+            return () => {
+              // this now gets called when the component unmounts
+            };
+          }, []);

@@ -1,0 +1,79 @@
+
+
+//create a child route in about route>profile route
+
+ {
+    path:'/about' // here "/" means path form root like localhost:3443/about
+    path:'about'             // here missing leading "/" wont make any diffence like localhost:1234/about
+    element:<comp></comp>,
+    children:[
+        {
+            path:'profile'               //when we use children inside children here profile path will be
+                                         // like >"localhost:1234/about/profile" and if we add /profile in path
+            path:'/profile'              // then it will be  like > "localhost:1234/profile"
+            element:<comp></comp>
+        }
+    ]
+ }
+
+ //read more about other routers in react-router-dom documentaion.
+
+
+// Class based component is important topic for interview.
+Ther are three main thing 
+    Mounting -> Updating -> Unmounting
+
+constructour -> render -> componentDidMount -> componentDidUpdate -> componentWillUnmount.
+constructour():
+first thing to in constructour is to call "super(props)" and then initailze the state object.
+
+render():
+render method will render the components if render method find a child component then child life cylce
+method will be called in above mentioned order.
+
+componentDidMount() :
+componentDidMount this method called after the render for the first time it runs only for one time.
+here we make api calls.
+
+componentDidUpdate():
+This method runs whenever there is a change in state and props of component. 
+
+componentWillUnmount:
+This method get called when user move to another component.It is used for cleanup method or api called
+in componentDidMount.
+
+
+//In class based component "this" keyword shared amoung all life cycle methods. and help access to
+common shared variable.
+for example: if we create a setInterval in component did mount method to clear that setInterval 
+we to remove when component will Unmount using component will Unmount method.
+    code ex //in comp did mount
+              this.timer = setInterval(()=>{},1000)
+            //in comp will Unmount
+              clearInterval(this.timer)
+
+
+// In function based component when we  setInterval in useEffect here we also need to clear those 
+things. so retrun a function from useEffect. and this return will call when we load or move to another
+component.
+    useEffect(()=>{
+      console.log('useEffect') //logs after the render of comp
+
+      return ()=>{
+        console.log('useEffect return')//this will log when we move to another comp
+      }
+    },[]) 
+
+
+
+//class life cylce 
+
+ **** most importent part of class based component is render method. and it is only mendatory method of class
+ based component.In class component render method returns some JSX.
+
+(Research HW) In class based component we need to create state
+constructour(props){
+    super(props)
+  }
+
+why?/

@@ -1,6 +1,8 @@
 
 *{
     box-sizing: border-box;
+    background-color: black;
+    color: whitesmoke;
 }
 
 body{
@@ -115,4 +117,8 @@ background-color: rgb(179, 178, 178);
     margin: 4px;
     width: 100%;
 
+}
+
+button{
+    background-color: rgb(55, 139, 248);
 }
