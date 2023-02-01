@@ -1,0 +1,55 @@
+
+//Creating Custom Hook
+Hooks in the end are javascript function .
+why when and how??
+Why: 
+    Reusability
+    Moudularity 
+    Readbility
+    Maintainbility 
+    Testable
+
+How:
+   Always name a hook ,starting with 'use'.
+   just create like a normal arrow funtion  and use 'useState' and 'useEffect'
+   inside the function and return a value.
+
+When:
+    When ever there is a useCase or you fill some logic can be saparate so make a hook.
+    also can be use saparate logic . to look code readable and clean.
+    when you need a feature . like check internet connetion. 
+
+//In javascript there ia and event listener , named 'online' that checks you are online or not.
+ 1-> window.addEventListener('online',()=>{})
+ 2-> window.addEventListener('offline',()=>{})
+
+ //It is good practice to remove .we should always remove eventlisteners
+//we need to clean up eventListener when ever we move to another component.
+
+HW make useLocalStorage Hook. ***
+
+// when a side getting big , it may contains 100s of component and we load all the components at the same
+time, means when we  build our using bundler it will cambine all code in single js file and it will be very large
+so we need to use 'chunking ', 'lazy loading',"code spliting","dynamic bundling","on demand loading","dynamic import".
+
+// you may use any bundler to bundle code. It is good to use bundler to bundle but within a limit. Like in a big
+app we can't bundle every component so we need to do logical bundle means we need to divide our whole
+code in logic small code that can be bundle saparatly or can be load on demand/lazy loading.
+
+in react We use 'lazy()' function to load dynamic imports/lazy loading.
+but we try to load a lazy component, before it available in browser react try to load the component (as lazy load
+take some time load the component)  thus react throw an error.
+  Therefore in react we use <Suspense > component provide by react to solve this issue.
+
+Lazy loading of a component
+ we lazy load the component where we are using it.
+    const Instamart = lazy(()=>{import('path to the component')})
+ ***Read more about it   //here import returns a promise that Suspense component waits to resolve.
+ Suspense take a fallback props that loads a loading jsx untill promise get resolve.
+
+//
+For every project we dont need to create lazy loading.
+do when needed component is very large or getting large by adding mor functionality.
+// 
+ *** You should never lazy load a component inside another component as it make parent component
+ to lazy that child (lazy load) every time when parent mounts.

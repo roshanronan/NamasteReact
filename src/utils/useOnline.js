@@ -1,0 +1,36 @@
+import { useEffect, useState } from "react"
+
+const useOnline = ()=>{
+
+    const [isOnline,setIsOnline] = useState(true)
+    const handleOnline = ()=>{
+        setIsOnline(true)
+    }
+
+    const handleOffline =()=>{
+        setIsOnline(false)
+    }
+
+
+    useEffect(()=>{
+
+        window.addEventListener('online',handleOnline)
+
+        window.addEventListener('offline',handleOffline)
+
+        return ()=>{
+            window.removeEventListener('online',handleOnline)
+            window.removeEventListener('offline',handleOffline)
+        }
+    }
+
+    ,[])
+
+    return isOnline
+}
+
+export default useOnline;
+
+//It is good practice to remove .we should always remove eventlisteners
+//we need to clean up eventListener when ever we move to another component.
+//in functional component we clean up in useEffect's return part.

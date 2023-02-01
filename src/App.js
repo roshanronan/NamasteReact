@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { lazy, Suspense, useState } from "react"
 import ReactDOM from 'react-dom/client';
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -10,6 +10,10 @@ import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
+// import Instamart from "./components/Instamart";
+
+//lazy load of Instamart Component
+const Instamart = lazy(()=>import('./components/Instamart'))
 
 
 
@@ -54,7 +58,14 @@ const appRouter =  createBrowserRouter([
             {
                 path:'/login',
                 element:<Login/>
+            },
+            {
+                path:'/instamart',
+                element:(<Suspense fallback={<h1>Loading....</h1>}>
+                            <Instamart/>
+                         </Suspense>)
             }
+            
         ]
     }
     

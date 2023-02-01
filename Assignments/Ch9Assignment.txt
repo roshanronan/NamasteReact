@@ -1,0 +1,38 @@
+1 - When and Why we nee lazy loading?
+    when component have many component and our appliction getting bigger by adding new features
+    so our bundle of coding getting big. it will cause performance issue.
+      therefore we need lazy loading/ dynamic import/code spliting etc.
+
+2 - What is Suspense?
+    When we do lazy loading in react, react try to render component as it find it jsx but lazy load
+    component take time so react throw an error. Therefore we use Suspense component to tell that 
+    this is a lazy laod component and it will wait untill that component loads.
+
+3 - Why we got this error : A component suspended while responding to synchronous input. This will cause
+    the UI to replaced with a loading indicator. To fix, updates that suspend should be wrapped with 
+    startTransition? How does Suspense fix the error?
+    We got this error if we load lazy component without using Suspense component.
+    as when we import a lazy component it returns a promise. so Suspense component waits untill
+    lazy component return in import. and Suspense solve the above issue by waiting promise to 
+    resolve. 
+
+4 - Advantages and disadvatages of using code spliting pattern.
+    Advantages      
+        - reduce bundle size,
+        - make appliction less time to load.
+        - on demand load component
+
+    disadvatages
+        - less SEO compatible
+        - won’t work during server side rendering when it comes to React, it works
+          on client side rendering only, therefore it is recommded to use   
+          loadable component. 
+    
+
+5 - when and why do we need Suspense?
+    React.Suspense allows us to conditionally suspend the rendering of a component until it has loaded. 
+    It has a fallback prop that accepts a React element.
+    The React element could be a JSX snippet or a complete component.
+    When we do lazy loading in react, react try to render component as it find it jsx but lazy load
+    component take time so react throw an error. Therefore we use Suspense component to tell that 
+    this is a lazy laod component and it will wait untill that component loads.
