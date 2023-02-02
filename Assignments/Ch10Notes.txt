@@ -1,0 +1,19 @@
+In System design interview you need to mention 
+    about code spliting, its pros and cons
+    which type of css you'll use like 
+                - a big common css file
+                - scss
+                - inline css
+                - component libary - ant,base ui,meterial ui,chakra
+                -styled component
+                -tailwind css framework
+                        -css on the go(in same file like inline css)
+                        -Reusability(pre define classed )
+                        -less bundle size
+                        -flexible ui (customization)
+
+(HW) explain tailwind css config. what key value it has and for what they are used for?
+     what is postcss?
+     Square backet notation in tailwindcss.
+     HOw to write media query?
+

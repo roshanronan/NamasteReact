@@ -33,15 +33,15 @@ const Login = () =>{
     })
   
     return(
-        <div className="login-contaner">
-            <h1>Login Page</h1>
-            <div className="form-container">
-                <form onSubmit={formik.handleSubmit}>  
-                <label>Email</label>
-                <input type="text" name="email" value={formik.values.email} onBlur={formik.handleBlur} onChange={formik.handleChange}/>
+        <div className="flex border-2 border-black w-1/2 justify-start m-auto flex-col sp">
+            <h1 className="m-auto">Login Page</h1>
+            <div className="flex  w-1/4 m-auto" >
+                <form className="flex flex-col p-3 " onSubmit={formik.handleSubmit}>  
+                <label className="m-2">Email</label>
+                <input className="m-2" type="text" name="email" value={formik.values.email} onBlur={formik.handleBlur} onChange={formik.handleChange}/>
                 {formik.touched.email && formik.errors.email?<div>{formik.errors.email}</div>:null}
-                <label>Password</label>
-                <input type="password" name="password" value={formik.values.password} onBlur={formik.handleBlur} onChange={formik.handleChange} />
+                <label className="m-2">Password</label>
+                <input className="m-2" type="password" name="password" value={formik.values.password} onBlur={formik.handleBlur} onChange={formik.handleChange} />
                 { formik.touched.password && formik.errors.password?<div>{formik.errors.password}</div>:null}
                 <button type="submit">Submit</button>
                 </form>

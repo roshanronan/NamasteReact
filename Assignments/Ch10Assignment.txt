@@ -1,0 +1,41 @@
+1 - Explore all the ways of writing css.
+    There are many ways to write css 
+        - old school method write a big css file for whole project
+        - use scss/sass
+        - inline css
+        - css libary like bootstrap,ant,base ui ,material ui,chakra
+        - styled component
+        - tailwind css framework
+
+2 - How do we configure tailwind?
+    To configure tailwind within react project(with parcel bundler)
+        we need to install tailwind and a postcss libary : npm install -D tailwindcss postcss
+        after intalling we need to run : npx tailwindcss init
+        now we a tailwind.config.js file in this file in content key we pass the files path with
+        extention regex .
+        also we need to create a postcss file with name .postcssrc 
+        and in this file we need to mention 
+                                             {
+                                               "plugins": {
+                                                 "tailwindcss": {}
+                                               }
+                                             }
+
+3 - In tailwind.config.js, what does all the keys mean content,theme,extends,plugins?
+    Content : it contains the path of the html , js and template files where tailwind
+              classes will be used.
+    
+    Theme :  It contains the project color palette,type scale ,fonts,breakpoints and border radius
+             value and more.
+    
+    Extend: It is used for to extend the default theme.
+            by adding new/extra breakpoints or all the thing that is under theme.
+
+    Plugin: Extending Tailwind with reusable third-party plugins.Plugins let you register 
+            new styles for Tailwind to inject into the user’s stylesheet using JavaScript
+            instead of CSS.
+
+
+4 - Why do we have .postccsrc file?
+    This is transiler for css . it convert modern css to vanilla css.
+    .postcssrc contains plugins of tailwindcss that need to be converted in vanilla css.

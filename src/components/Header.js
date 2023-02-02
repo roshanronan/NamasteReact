@@ -4,7 +4,7 @@ import useOnline from "../utils/useOnline";
 
 const Title =()=>{
     return(
-          <img className="logo"
+          <img className="h-20 w-20 p-2"
           src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"
           alt="Food Villa Logo"/>
        )
@@ -16,10 +16,10 @@ const Header = () =>{
     const online = useOnline()
 
     return(
-        <div className="header">
+        <div className="flex md:justify-between flex-col md:flex-row shadow bg-pink-50 ">
         <Title/>
-        <div className="nav-items">
-            <ul>
+        <div className=" ">
+            <ul className="flex py-5 space-x-4 md:flex-row flex-col" >
                 <li><Link to='/' >Home</Link></li>
                 <li><Link to= '/about'>About</Link></li>
                 <li><Link to= '/contact'>Contact</Link></li>
