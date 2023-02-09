@@ -1,12 +1,14 @@
 
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import {RestaurantCard} from './RestaurantCard'; //named import 
 import Shimmer from "./Shimmer";
 import { filterData } from "../utils/helper";
-import  useRestaurantList  from '../utils/useRestaurantList'
+import  useRestaurantList  from '../utils/useRestaurantList';
+import UserContext from "../utils/UserContext";
 
 
 const Body = () =>{
+    const {user,setUser} = useContext(UserContext)
     const [searchValue,setSearchValue] = useState("");
     const restaurantList = useRestaurantList()
     const [filtedRestaurantList,setFiltedRestaurantList] = useState([])
@@ -31,7 +33,18 @@ const Body = () =>{
                let data = filterData(restaurantList,searchValue)
                setFiltedRestaurantList(data)
             }}>Search</button>
-
+            <input className="p-1 placeholder:italic placeholder:p-1 focus:border-pink-500 focus:outline-none border border-pink-300 focus:ring-pink-500 focus:ring-1 rounded-sm px-2"  value={user.name}  onChange={(e)=>{
+                setUser({
+                    ...user,
+                    name:e.target.value,
+                })
+            }} />
+            <input className="p-1 placeholder:italic placeholder:p-1 focus:border-pink-500 focus:outline-none border border-pink-300 focus:ring-pink-500 focus:ring-1 rounded-sm px-2"  value={user.email}  onChange={(e)=>{
+                setUser({
+                    ...user,
+                    email:e.target.value
+                })
+            }} />
        </div>
        <div className=" flex flex-wrap justify-start bg-pink-100 ">
             {

@@ -1,0 +1,17 @@
+1 - What is prop drilling?
+    Passing prop down in dom tree from parent component to grand children component or so on.
+    it is known as prop drlling.
+
+2 - What is lifting the state up?
+    Lifting the state means we pass control of sibling component to  closest common ancestor.
+    means children get there props value from parent.
+
+3 - What is Context Provider and Context Consumer?
+    Context Provider use to update context value . It take prop name 'value' and we wrap component where 
+    we want to access value stored in context.
+
+    Context Consumer is used in class component to use value store in context.
+
+4 - if you don't pass a value to provider does it take the default value?
+    If we don't pass a value it will throw an ERROR. it won't take default value.
+

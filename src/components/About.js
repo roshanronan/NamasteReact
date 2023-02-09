@@ -1,7 +1,8 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Profile from "./Profile";
-import ProfileClass from './ProfileClass'
+import ProfileClass from './ProfileClass';
+import UserContext from "../utils/UserContext";
 
 
 
@@ -37,6 +38,9 @@ class About extends React.Component{
         console.log("Parent Render")
         return(
             <div>
+            <UserContext.Consumer>
+            {({user})=><h2 className="font-extrabold">{user.email}</h2>}
+            </UserContext.Consumer>
             <h2>This the about page of food villla...😁😀</h2>
             <Profile name="fRosan" lastName ="fsingh"/>
             <ProfileClass name="first child" lastName ="singh"/>

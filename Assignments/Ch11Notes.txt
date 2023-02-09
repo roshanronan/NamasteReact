@@ -1,0 +1,21 @@
+**Prop Drilling
+    -- when we pass props to component parent to child and childen to grand child and so on...
+       hence we need to pass props in component which might not need it.
+    -- and whenwever props get changed it will make those component.
+
+**Liftingl the state up
+     -- when we control child elements by parents state.
+      like in accodian component we pass state and setfuntion to child and
+      on button click we change state in parent.
+
+**in functional component we use useContext hook to use Context.
+  in Class components we use <ContextName.Consumer> component we wrap the component with
+  <ContextName.Consumer> and access context keys/values using 'value' key.
+
+**and change in context state make components to re-render whichever component is using
+context.
+
+**to update context we use <ContextName.Provider> component and it takes props(new state or key/value)
+in 'value' key.
+**we wrap the component where we want this new content value. 
+Best practice is to wrap whole application in <ContexName.Provider>.
