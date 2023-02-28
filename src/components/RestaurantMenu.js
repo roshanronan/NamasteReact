@@ -30,7 +30,7 @@ const RestaurantMenu = () =>{
       <div className="flex flex-col p-8">
         <h2 className="text-xl my-3">Menu</h2>
         <div className="flex flex-wrap justify-center">
-        {Object.values(restaurantMenu.menu.items).map(item =><FoodCard className="w-52" key={item.id} {...item}/>)}
+        {Object.values(restaurantMenu.menu.items).map(item =><FoodCard className="w-52" key={item.id} item={item}/>)}
         </div>
       </div>
        </div>

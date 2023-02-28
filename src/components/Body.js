@@ -7,6 +7,7 @@ import  useRestaurantList  from '../utils/useRestaurantList';
 import UserContext from "../utils/UserContext";
 
 
+
 const Body = () =>{
     const {user,setUser} = useContext(UserContext)
     const [searchValue,setSearchValue] = useState("");
@@ -45,6 +46,7 @@ const Body = () =>{
                     email:e.target.value
                 })
             }} />
+    
        </div>
        <div className=" flex flex-wrap justify-start bg-pink-100 ">
             {

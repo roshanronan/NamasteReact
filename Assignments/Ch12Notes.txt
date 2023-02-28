@@ -1,0 +1,48 @@
+.React Redux and Redux Toolkit
+
+React Redux is like bridge b/w react and redux.
+React Toolkit is like core of redux creating store and slices.
+
+configure store
+    configureStore() from rtk
+create slice
+    createSlice() from rtk
+
+    createSlice({
+        name:'cart',
+        initialState:{
+            items:[]
+        },
+        reducers:{
+            addItem:(state,action)=>{
+                state = action.payload
+            }
+        }
+    })
+
+    export const {addItem, clearItem} = cartSlice.actions
+    export default cartSlice.reducer;
+
+--put the slice in store
+    {
+        reducer:{
+            cart:cartSlice,
+            user:userSlice
+        }
+    }
+--- reading data from redux store
+ we need to subscribe redux store using useSelector hook
+
+const cartItem = useSelector(stroe =>store.slicename.initialState)
+
+---updating data of redux store
+on button click we all funtion that  dispatch an action this action calla reducer that updates the redux store slice
+
+
+
+const dispatch = useDispatch()
+ 
+ //addItem is action from slice
+functionCall on  btn click (item)=>{
+    dispatch(addItem(item))
+}

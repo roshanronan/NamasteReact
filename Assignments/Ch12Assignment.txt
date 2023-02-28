@@ -1,0 +1,62 @@
+1. useContext vs Redux
+   
+   useContext is build in hook in react that is used for access and modify context value and state management.
+   To pass props down to dom tree without passing props to every child. we use a central state called
+   context. Using context for small application is good. 
+
+   Redux is more powerful and complex state management libaray third party libaray. It is used for statemanagement is
+   large scale application because it more feature then context.
+
+
+2.Advantage of using Redux toolkit over redux.
+   Earliar working with redux was much complex due it's its store implimentation. It was bit confusing
+   to setup and less developer friendly.
+      To solve above problem the created Redux toolkit.
+
+      -- Easy Syntex,
+      -- Easy to debug using react dev tool
+      -- 
+3. Explain Dispatcher.
+   Dispatcher is used in flux architechture where data flow in one direction.
+   Dispatcher is a component in react that is take an action an update an central store.
+   Dispatcher take input/ user interection event / action from the ui and then we dispatch that
+   action.
+
+   useDispatch is react-redux hook that return a function , using we dispatch an action that
+   modiefies the central store.
+
+4. Explain reducer:
+   When a action dispatches it not directily update the state in store.
+   To update the state in store there is some functions which called reducer.
+   Reducers are the real function that interect with state in store.
+
+5.Explain Slice:
+   Slices are individal separete section in Store. which have there own reducers and action that
+   are specific to a slice.
+   We define action and reducer in slice.
+
+
+6.Explain Selector:
+  As we cant directily access state of a store, we need a hook call useSelector this hook
+  allow us to subsribe a slice of store.After subsribing store we get the value .
+
+7.Explain createSclie and configuration it takes.
+  CreateSlice is a component that is used to create slices in redux store.
+  
+  create slice
+    createSlice() from rtk
+
+    createSlice({
+        name:'cart',
+        initialState:{
+            items:[]
+        },
+        reducers:{
+            addItem:(state,action)=>{
+                state = action.payload
+            }
+        }
+    })
+
+    export const {addItem, clearItem} = cartSlice.actions
+    export default cartSlice.reducer;

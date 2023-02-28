@@ -1,7 +1,9 @@
 import { useState,useContext } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import UserContext from "../utils/UserContext";
+import store from "../utils/store";
 
 const Title =()=>{
     return(
@@ -14,6 +16,7 @@ const Title =()=>{
 const Header = () =>{
 
     const {user} = useContext(UserContext)
+    const cartItem = useSelector(store=>store.cart.items)
 
     const [isLogin,setIsLogin] = useState(false)
     const online = useOnline()
@@ -28,7 +31,7 @@ const Header = () =>{
                 <li><Link to= '/contact'>Contact</Link></li>
                 <li><Link to='/login'>Login</Link></li>
                 <li><Link to='/instamart'>Instamart</Link></li>
-                <li>Cart</li>
+                <li><Link to= '/cart'>Cart {cartItem.length}</Link></li>
             </ul>
             
         </div>
