@@ -72,7 +72,7 @@
 10- What is the difference between `package.json` and `package-lock.json`?
     Package.json cantains the package version detail for development environment of our project 
     and Package-lock.json cantains package version(exact version) detail for production environment.
-    It locks the package version and should naver to put in gitignore file.
+    It locks the package version and should never to put in gitignore file.
 
 11- Why should I not modify `package-lock.json`?
     You should never update package-lock.json as it contain exact version of libraries/packages on which
